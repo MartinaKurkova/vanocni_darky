@@ -237,5 +237,25 @@
 
   </div>
 
+  <script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.x.x/firebase-firestore.js"></script>
+<script>
+  // Firebase konfigurace
+  const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_MESSAGING_ID",
+    appId: "YOUR_APP_ID"
+  };
+
+  // Inicializace Firebase
+  const app = firebase.initializeApp(firebaseConfig);
+  const db = firebase.firestore();
+</script>
+<script src="script.js"></script>
+
+
 </body>
 </html>
