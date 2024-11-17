@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  <title>Seznam vánočních dárků</title>
+</head>
+
+<body>
+<h1>Tipy na vánoční dárky</h1>
+<h2>Mikuláš a Šimon</h2>
+<div class="gift-list" id="gift-list">
+
+
+    <div class="gift" data-id="1">
+        <div class="text">
+            <p class="nazev">Lego podložka na stavění</p>
+            <p class="cena">Přibližná cena: 200 Kč (Musely by se koupit dva kusy)</p>
+            <a href="https://prislusenstvi-k-legu.heureka.cz/lego-classic-11023-podlozka-na-staveni-25-x-25-cm-zelena/#prehled/" target="_blank">Najít dárek v e-shopu</a>
+        <br>
+        <button onclick="reserveGift(1)">Rezervovat</button>
+    </div>
+        <div class="image">
+            <img src="images/lego.jpg" alt="lego">
+        </div>
+      </div>
+
+
+      <div class="gift" data-id="2">
+        <div class="text">
+            <p class="nazev">DJECO silnice</p>
+            <p class="cena">Přibližná cena: 400 Kč</p>
+            <a href="https://puzzle.heureka.cz/djeco-silnice-21-dilku/?utm_source=google&utm_medium=cpc&utm_campaign=CZ%3EPRF%3EBP%3EFilmy%2Cknihy%2Chry%3ESERP%3ECAT%3E%28DSA%2BKW%29&utm_id=1720639388&gad_source=1&gclid=CjwKCAiAxea5BhBeEiwAh4t5K3e71soqiOeL5w2Y2khryV4iEju8JFb2GfH-_AKtj2oH_N_DK9tmmxoCeioQAvD_BwE#prehled/" target="_blank">Najít dárek v e-shopu</a>
+        <br>
+        <button onclick="reserveGift(2)">Rezervovat</button>
+    </div>
+        <div class="image">
+            <img src="images/silnice.jpg" alt="silnice">
+        </div>
+      </div>
+
+
+    <div class="gift" data-id="3">
+        <div class="text">
+        <p class="nazev">Tramvaj hlásící zastávky</p>
+        <p class="cena">Přibližná cena: 350 Kč</p>
+        <a href="https://auta-letadla-lode.heureka.cz/rappa-tramvaj-hlasici-zastavky-cesky-s-funkcnimi-dvermi-28-cm/#prehled/" target="_blank">Najít dárek v e-shopu</a>
+        <br>
+        <button onclick="reserveGift(3)">Rezervovat</button>
+    </div>
+    <div class="image">
+        <img src="images/tramvaj.jpg" alt="tramvaj">
+    </div>
+      </div>
+
+    <div class="gift" data-id="4">
+        <div class="text">
+        <p class="nazev">Autobus hlásící zastávky</p>
+        <p class="cena">Přibližná cena: 350 Kč</p>
+        <a href="https://auta-letadla-lode.heureka.cz/rappa-autobus-ktery-hlasi-zastavky-cesky-kloubovy-36-cm/#prehled/" target="_blank">Najít dárek v e-shopu</a>
+        <br>
+        <button onclick="reserveGift(4)">Rezervovat</button>
+    </div>
+    <div class="image">
+        <img src="images/bus.avif" alt="bus">
+    </div>
+      </div>
+
+      <div class="gift" data-id="5">
+        <div class="text">
+        <p class="nazev">Brio Kontejnerový překladač</p>
+        <p class="cena">Přibližná cena: 550 Kč</p>
+        <a href="https://auta-letadla-lode.heureka.cz/brio-kontejnerovy-prekladac/#prehled/" target="_blank">Najít dárek v e-shopu</a>
+        <br>
+        <button onclick="reserveGift(5)">Rezervovat</button>
+    </div>
+    <div class="image">
+        <img src="images/brio.jpg" alt="brio">
+    </div>
+      </div>
+
+      <div class="gift" data-id="6">
+        <div class="text">
+        <p class="nazev">Mindok Smart Tři malá prasátka</p>
+        <p class="cena">Přibližná cena: 600 Kč</p>
+        <a href="https://deskove-hry.heureka.cz/mindok-smart-tri-mala-prasatka/#prehled/" target="_blank">Najít dárek v e-shopu</a>
+        <br>
+        <button onclick="reserveGift(6)">Rezervovat</button>
+    </div>
+    <div class="image">
+        <img src="images/pigs.avif" alt="pigs">
+    </div>
+      </div>
+
+      <div class="gift" data-id="7">
+        <div class="text">
+        <p class="nazev">Puzzle EDUCA Hrdinové v akci </p>
+        <p class="cena">Přibližná cena: 250 Kč</p>
+        <a href="https://puzzle.heureka.cz/educa-hrdinove-v-akci-4v1-20_40_60_80-dilku/?utm_source=google&utm_medium=cpc&utm_campaign=CZ%3EPRF%3EBP%3EFilmy_knihy_hry%3ESERP%3EPROD%3E%28PLA%29&utm_id=21543640558&gad_source=1&gclid=CjwKCAiAxea5BhBeEiwAh4t5K5jAmBTMk19X0RcCKxZXbgfW7jqxAAkEqL6LDFbJHubtmzvwohhJbBoCm3IQAvD_BwE#prehled/" target="_blank">Najít dárek v e-shopu</a>
+        <br>
+        <button onclick="reserveGift(7)">Rezervovat</button>
+    </div>
+    <div class="image">
+        <img src="images/puzzle.jpg" alt="puzzle">
+    </div>
+      </div>
+
+
+      <div class="gift" data-id="8">
+        <div class="text">
+        <p class="nazev">Djeco Šablony Dinosauři</p>
+        <p class="cena">Přibližná cena: 160 Kč</p>
+        <a href="https://kreslici-sablony.heureka.cz/djeco-sablony-dinosauri_2/#prehled/" target="_blank">Najít dárek v e-shopu</a>
+        <br>
+        <button onclick="reserveGift(8)">Rezervovat</button>
+    </div>
+    <div class="image">
+        <img src="images/dino.jpg" alt="dino">
+    </div>
+      </div>
+
+
+      <div class="gift" data-id="9">
+        <div class="text">
+        <p class="nazev">Djeco Oboustranné domino Zvířátka</p>
+        <p class="cena">Přibližná cena: 200 Kč</p>
+        <a href="https://deskove-hry.heureka.cz/djeco-oboustranne-domino-zviratka/#prehled/" target="_blank">Najít dárek v e-shopu</a>
+        <br>
+        <button onclick="reserveGift(9)">Rezervovat</button>
+    </div>
+    <div class="image">
+        <img src="images/domino.avif" alt="domino">
+    </div>
+      </div>
+
+
+      <div class="gift" data-id="10">
+        <div class="text">
+        <p class="nazev">Desková hra Příšerky ze skříně</p>
+        <p class="cena">Přibližná cena: 270 Kč</p>
+        <a href="https://deskove-hry.heureka.cz/granna-priserky-ze-skrine_3/?utm_source=google&utm_medium=cpc&utm_campaign=CZ%3EPRF%3EBP%3EFilmy%2Cknihy%2Chry%3ESERP%3ECAT%3E%28DSA%2BKW%29&utm_id=1720639388&gad_source=1&gclid=CjwKCAiAxea5BhBeEiwAh4t5K686OespDeGTxV-Jrxzto6L8CHzGp-wWIXOCmfdCyPR5Hxs0kvEX-BoCTTUQAvD_BwE#prehled/" target="_blank">Najít dárek v e-shopu</a>
+        <br>
+        <button onclick="reserveGift(10)">Rezervovat</button>
+    </div>
+    <div class="image">
+        <img src="images/priserky.avif" alt="priserky">
+    </div>
+      </div>
+
+
+      <div class="gift" data-id="11">
+        <div class="text">
+        <p class="nazev">LEGO® City 60435 Odtahový vůz a oprava sporťáku</p>
+        <p class="cena">Přibližná cena: 350 Kč</p>
+        <a href="https://lego.heureka.cz/lego-city-60435-odtahovy-vuz-a-oprava-sportaku/#prehled/" target="_blank">Najít dárek v e-shopu</a>
+        <br>
+        <button onclick="reserveGift(11)">Rezervovat</button>
+    </div>
+    <div class="image">
+        <img src="images/odtah.avif" alt="odtah">
+    </div>
+      </div>
+
+
+      <div class="gift" data-id="12">
+        <div class="text">
+        <p class="nazev">LEGO® City 60410 Hasičská záchranná motorka</p>
+        <p class="cena">Přibližná cena: 200 Kč</p>
+        <a href="https://lego.heureka.cz/lego-city-60410-hasicska-zachranna-motorka/#prehled/" target="_blank">Najít dárek v e-shopu</a>
+        <br>
+        <button onclick="reserveGift(12)">Rezervovat</button>
+    </div>
+    <div class="image">
+        <img src="images/moto.jpg" alt="moto">
+    </div>
+      </div>
+
+
+      <div class="gift" data-id="13">
+        <div class="text">
+        <p class="nazev">LEGO® City 60287 Traktor</p>
+        <p class="cena">Přibližná cena: 350 Kč</p>
+        <a href="https://lego.heureka.cz/lego-city-60287-traktor/?ppcbee-adtext-variant=RSA-dynamic-NEW&utm_source=google&utm_medium=cpc&utm_campaign=CZ%3EPRF%3ECG%3EHracky%3ESERP%3EPROD%3E(KW)&utm_id=15366193661&gad_source=1&gclid=CjwKCAiAxea5BhBeEiwAh4t5K8H3UjuVKfEjUtBBMVThvniXevt6LU7bGkZq9Yda5rJ0K4Wliv6s-xoCmKYQAvD_BwE#prehled/" target="_blank">Najít dárek v e-shopu</a>
+        <br>
+        <button onclick="reserveGift(13)">Rezervovat</button>
+    </div>
+    <div class="image">
+        <img src="images/traktor.avif" alt="traktor">
+    </div>
+      </div>
+
+
+      <div class="gift" data-id="14">
+        <div class="text">
+        <p class="nazev">LEGO® City 60401 Stavební parní válec</p>
+        <p class="cena">Přibližná cena: 200 Kč</p>
+        <a href="https://lego.heureka.cz/lego-city-60401-stavebni-parni-valec/?utm_source=google&utm_medium=cpc&utm_campaign=CZ%3EPRF%3ECG%3EHracky%3ESERP%3ECAT%3E%28DSA%2BKW%29&utm_id=1723318021&gad_source=1&gclid=CjwKCAiAxea5BhBeEiwAh4t5K2pNT7WGiAYcyuMJyxxVEYhMDz-BCjbdysRFQmMaygy6kbpUXe0_VhoCGJYQAvD_BwE#prehled/" target="_blank">Najít dárek v e-shopu</a>
+        <br>
+        <button onclick="reserveGift(14)">Rezervovat</button>
+    </div>
+    <div class="image">
+        <img src="images/valec.jpg" alt="valec">
+    </div>
+      </div>
+
+      
+      <div class="gift" data-id="15">
+        <div class="text">
+        <p class="nazev">Dětská jídelní sada auto moto</p>
+        <p class="cena">Přibližná cena: 450 Kč</p>
+        <a href="https://www.doplnkydodomacnosti.cz/produkt/thun-3dilna-detska-jidelni-sada-auto-moto" target="_blank">Najít dárek v e-shopu</a>
+        <br>
+        <button onclick="reserveGift(15)">Rezervovat</button>
+    </div>
+    <div class="image">
+        <img src="images/talir1.jpg" alt="talir1">
+    </div>
+      </div>
+
+
+      <div class="gift" data-id="16">
+        <div class="text">
+        <p class="nazev">Dětská jídelní sadahasiči</p>
+        <p class="cena">Přibližná cena: 400 Kč</p>
+        <a href="https://jidelni-soupravy.heureka.cz/thun-1794-hasici-3-ks/#recenze/”>Sada nádobí hasiči" target="_blank">Najít dárek v e-shopu</a>
+        <br>
+        <button onclick="reserveGift(16)">Rezervovat</button>
+    </div>
+    <div class="image">
+        <img src="images/talir2.jpg" alt="talir2">
+    </div>
+      </div>
+
+  </div>
+
+</body>
+</html>

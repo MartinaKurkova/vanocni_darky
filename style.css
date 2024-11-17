@@ -1,0 +1,79 @@
+body {
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 1rem;
+    margin: auto 20px;
+    background-color: #f9f9f9;
+    max-width: 900px;
+  }
+
+  .cena {
+    font-size: 0.75rem;
+  }
+
+  .nazev {
+    font-weight: 800;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #28a745;
+  }
+
+  h2 {
+    text-align: center;
+    color: black;
+  }
+
+  #gift-list {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .gift {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    gap: 20px;
+  }
+  .gift p {
+    margin: 0 0 10px;
+  }
+  .gift a {
+    color: #007BFF;
+    text-decoration: none;
+  }
+  .gift button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    flex-grow: 0;
+    height: auto;
+    align-self: flex-start;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  .gift button:hover {
+    background-color: #218838;
+  }
+  .reserved {
+    display: none; /* Skryje rezervované dárky */
+  }
+
+  img {
+    max-width: 100px;
+  }
+
+  .image {
+    flex: 0 1 auto;
+  }
+
+  .text {
+    flex: 1 1 50%;
+  }
