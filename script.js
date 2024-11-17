@@ -48,25 +48,12 @@ function unreserveGift(id) {
 window.onload = checkReservedGifts;
 
 
-// Resetování všech rezervací
-function resetAllReservations() {
-  db.collection("gifts").get().then((querySnapshot) => {
-    querySnapshot.forEach((doc) => {
-      // Nastavení všech rezervací na false
-      db.collection("gifts").doc(doc.id).set({ reserved: false }, { merge: true })
-        .then(() => {
-          const giftElement = document.querySelector(`.gift[data-id="${doc.id}"]`);
-          if (giftElement) {
-            giftElement.classList.remove("reserved");
-            const button = giftElement.querySelector("button");
-            button.textContent = "Rezervovat";
-            button.onclick = () => reserveGift(doc.id);
-          }
-        });
+function testFirestoreWrite() {
+  db.collection("gifts").doc("test-doc").set({ testField: "Hello, Firebase!" })
+    .then(() => {
+      console.log("Data byla úspěšně zapsána!");
+    })
+    .catch((error) => {
+      console.error("Chyba při zápisu do Firestore:", error);
     });
-    alert("Všechny rezervace byly zrušeny!");
-  });
 }
-
-// Přiřazení funkce tlačítku
-document.getElementById("reset-all").onclick = resetAllReservations;
