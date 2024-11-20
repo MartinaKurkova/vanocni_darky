@@ -315,35 +315,12 @@
       const db = firebase.firestore();
     </script>
   
-    <!-- Načítání dárků z Firestore -->
-    <script>
-      const giftsList = document.getElementById("gifts-list");
-  
-      // Načtení dárků z Firestore
-      db.collection("gifts").get()
-        .then((querySnapshot) => {
-          querySnapshot.forEach((doc) => {
-            const data = doc.data();
-            const giftItem = `
-              <div class="gift" data-id="${doc.id}">
-                <div class="text">
-                  <p class="nazev">${data.name}</p>
-                  <p class="cena">Rezervováno: ${data.reserved ? "Ano" : "Ne"}</p>
-                  <button onclick="reserveGift('${doc.id}')">${data.reserved ? "Rezervováno" : "Rezervovat"}</button>
-                </div>
-              </div>`;
-            giftsList.innerHTML += giftItem;
-          });
-        })
-        .catch((error) => {
-          console.error("Chyba při načítání dárků:", error);
-        });
-    </script>
+
   
     <!-- Váš vlastní JavaScript -->
     <script src="script.js"></script>
 
-    
+
   </body>
   
 </body>
