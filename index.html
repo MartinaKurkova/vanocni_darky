@@ -290,29 +290,61 @@
   </div>
  
   
-
+  <body>
+    <h1>Tipy na vánoční dárky</h1>
+    <div id="gifts-list"></div>
   
-  <script>
-    const giftsList = document.getElementById("gifts-list");
-
-    db.collection("gifts").get().then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
+    <!-- Firebase knihovny -->
+    <script src="https://www.gstatic.com/firebasejs/9.x/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.x/firebase-firestore.js"></script>
+  
+    <!-- Firebase inicializace -->
+    <script>
+      // Konfigurace Firebase
+      const firebaseConfig = {
+        apiKey: "AIzaSyDxhn-pQkx2GmEKNzarR9O0u7mexiz4MlA",
+        authDomain: "vanoce-gifts.firebaseapp.com",
+        projectId: "vanoce-gifts",
+        storageBucket: "vanoce-gifts.firebasestorage.app",
+        messagingSenderId: "236642032184",
+        appId: "1:236642032184:web:2c7e9329c7add2d0a6e4cd"
+      };
+  
+      // Inicializace Firebase
+      const app = firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+  
+    <!-- Načítání dárků z Firestore -->
+    <script>
+      const giftsList = document.getElementById("gifts-list");
+  
+      // Načtení dárků z Firestore
+      db.collection("gifts").get()
+        .then((querySnapshot) => {
+          querySnapshot.forEach((doc) => {
             const data = doc.data();
             const giftItem = `
-                <div class="gift" data-id="${doc.id}">
-                    <div class="text">
-                        <p class="nazev">${data.name}</p>
-                        <p class="cena">Rezervováno: ${data.reserved ? "Ano" : "Ne"}</p>
-                        <button onclick="reserveGift('${doc.id}')">${data.reserved ? "Rezervováno" : "Rezervovat"}</button>
-                    </div>
+              <div class="gift" data-id="${doc.id}">
+                <div class="text">
+                  <p class="nazev">${data.name}</p>
+                  <p class="cena">Rezervováno: ${data.reserved ? "Ano" : "Ne"}</p>
+                  <button onclick="reserveGift('${doc.id}')">${data.reserved ? "Rezervováno" : "Rezervovat"}</button>
                 </div>
-            `;
+              </div>`;
             giftsList.innerHTML += giftItem;
+          });
+        })
+        .catch((error) => {
+          console.error("Chyba při načítání dárků:", error);
         });
-    });
-</script>
- 
-<script src="script.js"></script>
+    </script>
+  
+    <!-- Váš vlastní JavaScript -->
+    <script src="script.js"></script>
 
+    
+  </body>
+  
 </body>
 </html>
