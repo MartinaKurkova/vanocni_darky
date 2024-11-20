@@ -98,7 +98,7 @@
 
       <div class="gift" data-id="7">
         <div class="text">
-        <p class="nazev">Puzzle EDUCA Hrdinové v akci </p>
+        <p class="nazev">Puzzle EDUCA Hrdinové v akci</p>
         <p class="cena">Přibližná cena: 250 Kč</p>
         <a href="https://puzzle.heureka.cz/educa-hrdinove-v-akci-4v1-20_40_60_80-dilku/?utm_source=google&utm_medium=cpc&utm_campaign=CZ%3EPRF%3EBP%3EFilmy_knihy_hry%3ESERP%3EPROD%3E%28PLA%29&utm_id=21543640558&gad_source=1&gclid=CjwKCAiAxea5BhBeEiwAh4t5K5jAmBTMk19X0RcCKxZXbgfW7jqxAAkEqL6LDFbJHubtmzvwohhJbBoCm3IQAvD_BwE#prehled/" target="_blank">Najít dárek v e-shopu</a>
         <br>
@@ -209,7 +209,7 @@
 
       <div class="gift" data-id="15">
         <div class="text">
-        <p class="nazev"> LEGO® City 60429 Vesmírná loď a objev asteroidu</p>
+        <p class="nazev">LEGO® City 60429 Vesmírná loď a objev asteroidu</p>
         <p class="cena">Přibližná cena: 350 Kč</p>
         <a href="https://lego.heureka.cz/lego-city-60429-vesmirna-lod-a-objev-asteroidu/?utm_source=google&utm_medium=cpc&utm_campaign=CZ%3EPRF%3ECG%3EHracky%3ESERP%3ECAT%3E%28DSA%2BKW%29&utm_id=1723318021&gad_source=1&gclid=CjwKCAiArva5BhBiEiwA-oTnXdqTd9fYWO9jEIebn464GhSeJCibgH_YQepFh_bOR3Yl9RbHR_VfuRoCPhoQAvD_BwE#prehled/" target="_blank">Najít dárek v e-shopu</a>
         <br>
@@ -288,7 +288,30 @@
       </div>
 
   </div>
+ 
   
+
+  
+  <script>
+    const giftsList = document.getElementById("gifts-list");
+
+    db.collection("gifts").get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+            const data = doc.data();
+            const giftItem = `
+                <div class="gift" data-id="${doc.id}">
+                    <div class="text">
+                        <p class="nazev">${data.name}</p>
+                        <p class="cena">Rezervováno: ${data.reserved ? "Ano" : "Ne"}</p>
+                        <button onclick="reserveGift('${doc.id}')">${data.reserved ? "Rezervováno" : "Rezervovat"}</button>
+                    </div>
+                </div>
+            `;
+            giftsList.innerHTML += giftItem;
+        });
+    });
+</script>
+ 
 <script src="script.js"></script>
 
 </body>
