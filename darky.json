@@ -1,0 +1,24 @@
+{
+    "gifts": {
+      "1": { "name": "Lego podložka na stavění", "reserved": false },
+      "2": { "name": "DJECO silnice", "reserved": false },
+      "3": { "name": "Tramvaj hlásící zastávky", "reserved": false },
+      "4": { "name": "Autobus hlásící zastávky", "reserved": false },
+      "5": { "name": "Brio Kontejnerový překladač", "reserved": false },
+      "6": { "name": "Mindok Smart Tři malá prasátka", "reserved": false },
+      "7": { "name": "Puzzle EDUCA Hrdinové v akci", "reserved": false },
+      "8": { "name": "Djeco Šablony Dinosauři", "reserved": false },
+      "9": { "name": "Djeco Oboustranné domino Zvířátka", "reserved": false },
+      "10": { "name": "Desková hra Příšerky ze skříně", "reserved": false },
+      "11": { "name": "LEGO® City 60435 Odtahový vůz a oprava sporťáku", "reserved": false },
+      "12": { "name": "LEGO® City 60410 Hasičská záchranná motorka", "reserved": false },
+      "13": { "name": "LEGO® City 60287 Traktor", "reserved": false },
+      "14": { "name": "LEGO® City 60401 Stavební parní válec", "reserved": false },
+      "15": { "name": "LEGO® City 60429 Vesmírná loď a objev asteroidu", "reserved": false },
+      "16": { "name": "Hot Wheels Angličák 5 ks", "reserved": false },
+      "17": { "name": "Dětská jídelní sada auto moto", "reserved": false },
+      "18": { "name": "Dětská jídelní sada hasiči", "reserved": false },
+      "19": { "name": "Play-Doh Hasbro Starters Fábrika Zábavy", "reserved": false }
+    }
+  }
+  
