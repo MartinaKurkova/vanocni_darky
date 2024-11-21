@@ -1,117 +1,117 @@
 body {
-    font-family: "Montserrat", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 400;
-    font-size: 1rem;
-    margin: auto 20px;
-    background-color: #f9f9f9;
-    max-width: 900px;
-  }
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 1rem;
+  margin: auto 20px;
+  background-color: #f9f9f9;
+  max-width: 900px;
+}
 
-  .cena {
-    font-size: 0.75rem;
-  }
+.cena {
+  font-size: 0.75rem;
+}
 
-  .nazev {
-    font-weight: 800;
-  }
-  
-  h1 {
-    text-align: center;
-    color: #28a745;
-  }
+.nazev {
+  font-weight: 800;
+}
 
-  h2 {
-    text-align: center;
-    color: black;
-  }
+h1 {
+  text-align: center;
+  color: #28a745;
+}
 
-  #gift-list {
-    max-width: 600px;
-    margin: 0 auto;
-  }
+h2 {
+  text-align: center;
+  color: black;
+}
 
-  .gift {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    gap: 20px;
-  }
+#gift-list {
+  max-width: 600px;
+  margin: 0 auto;
+}
 
-  .gift p {
-    margin: 0 0 10px;
-  }
-  .gift a {
-    color: #007BFF;
-    text-decoration: none;
-  }
-  .gift button {
-    background-color: #28a745;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    flex-grow: 0;
-    height: auto;
-    align-self: flex-start;
-    padding: 10px;
-    margin-top: 20px;
-  }
+.gift {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 20px;
+}
 
-  img {
-    max-width: 100px;
-  }
+.gift p {
+  margin: 0 0 10px;
+}
+.gift a {
+  color: #007BFF;
+  text-decoration: none;
+}
+.gift button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex-grow: 0;
+  height: auto;
+  align-self: flex-start;
+  padding: 10px;
+  margin-top: 20px;
+}
 
-  .image {
-    flex: 0 1 auto;
-  }
+img {
+  max-width: 100px;
+}
 
-  .text {
-    flex: 1 1 50%;
-  }
+.image {
+  flex: 0 1 auto;
+}
 
-  .reserved {
-    opacity: 0.5; /* Částečná průhlednost */
-    background-color: #f8f8f8; /* Světlejší pozadí */
-    pointer-events: auto; /* Zajistí, že zůstane interaktivní */
+.text {
+  flex: 1 1 50%;
+}
+
+.reserved {
+  opacity: 0.5; /* Částečná průhlednost */
+  background-color: #f8f8f8; /* Světlejší pozadí */
+  pointer-events: auto; /* Zajistí, že zůstane interaktivní */
 }
 
 .reserved button {
-    background-color: #dc3545; /* Červená barva pro tlačítko "Zrušit rezervaci" */
-    color: white;
+  background-color: #dc3545; /* Červená barva pro tlačítko "Zrušit rezervaci" */
+  color: white;
 }
 
 .reserved button:hover {
-    background-color: #bd2130; /* Tmavší červená při najetí myší */
+  background-color: #bd2130; /* Tmavší červená při najetí myší */
 }
 
-  
 
-  .gift_hidden {
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    display: flex;
-    gap: 20px;
-    opacity: 0.2;
-  }
 
-  .gift_hidden button {
-    background-color: #880303;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    flex-grow: 0;
-    height: auto;
-    align-self: flex-start;
-    padding: 10px;
-    margin-top: 20px;
-  }
+.gift_hidden {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  gap: 20px;
+  opacity: 0.2;
+}
+
+.gift_hidden button {
+  background-color: #880303;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  flex-grow: 0;
+  height: auto;
+  align-self: flex-start;
+  padding: 10px;
+  margin-top: 20px;
+}
