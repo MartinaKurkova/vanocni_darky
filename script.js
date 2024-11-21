@@ -1,4 +1,8 @@
-// Inicializace Firebase
+// Import funkcí z Firebase SDK pomocí absolutních URL
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+import { getDatabase, ref, onValue, update } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-database.js";
+
+// Firebase konfigurace
 const firebaseConfig = {
   apiKey: "AIzaSyCDAfNzpwtf4VNx2kEH6BeH5dN2FIuXIOo",
   authDomain: "vanocni-darky2.firebaseapp.com",
@@ -9,22 +13,25 @@ const firebaseConfig = {
   appId: "1:857067200819:web:300337dc270c9010259e46"
 };
 
-// Inicializace Firebase aplikace
-firebase.initializeApp(firebaseConfig);
-const db = firebase.database();
+// Inicializace Firebase
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
 
-// Funkce pro načtení seznamu dárků
+console.log("Firebase inicializováno."); // Pro kontrolu, zda je Firebase připojen
+
+// Funkce pro načtení seznamu dárků z Firebase a aktualizaci stránky
 function loadGifts() {
-  const giftListRef = db.ref("gifts");
+  const giftListRef = ref(db, "gifts"); // Odkaz na větev "gifts" v databázi
+  console.log("Načítám seznam dárků...");
 
-  giftListRef.on("value", (snapshot) => {
-    const gifts = snapshot.val();
+  onValue(giftListRef, (snapshot) => {
+    const gifts = snapshot.val(); // Načtení dat z Firebase
     if (!gifts) {
       console.error("Žádná data v databázi.");
       return;
     }
 
-    console.log("Načtena data:", gifts);
+    console.log("Načtena data:", gifts); // Pro kontrolu načtených dat
     for (const id in gifts) {
       const gift = gifts[id];
       const giftElement = document.querySelector(`.gift[data-id="${id}"]`);
@@ -32,6 +39,7 @@ function loadGifts() {
       if (giftElement) {
         const button = giftElement.querySelector("button");
 
+        // Aktualizace stavu rezervace na základě dat z Firebase
         if (gift.reserved) {
           giftElement.classList.add("reserved");
           button.textContent = "Zrušit rezervaci";
@@ -40,6 +48,7 @@ function loadGifts() {
           button.textContent = "Rezervovat";
         }
 
+        // Připojení funkce na kliknutí
         button.onclick = () => reserveGift(id);
       } else {
         console.warn(`Dárek s ID ${id} nebyl nalezen v HTML.`);
@@ -48,32 +57,34 @@ function loadGifts() {
   });
 }
 
-// Funkce pro rezervaci dárku
+// Funkce pro změnu stavu rezervace v Firebase
 function reserveGift(id) {
   console.log(`Rezervuji dárek s ID: ${id}`);
-  const giftRef = db.ref(`gifts/${id}`);
+  const giftRef = ref(db, `gifts/${id}`); // Odkaz na konkrétní dárek
 
-  giftRef.once("value", (snapshot) => {
+  onValue(giftRef, (snapshot) => {
     const gift = snapshot.val();
     if (!gift) {
       console.error(`Dárek s ID ${id} nebyl nalezen v databázi.`);
       return;
     }
 
-    const newReservedState = !gift.reserved;
+    const newReservedState = !gift.reserved; // Přepnutí stavu rezervace
+    console.log(`Nový stav rezervace pro ID ${id}: ${newReservedState}`);
 
-    giftRef.update({ reserved: newReservedState })
+    // Aktualizace stavu v databázi
+    update(giftRef, { reserved: newReservedState })
       .then(() => {
         console.log(`Dárek s ID ${id} aktualizován.`);
       })
       .catch((error) => {
         console.error("Chyba při aktualizaci:", error);
       });
-  });
+  }, { onlyOnce: true }); // Spustí se jen jednou pro aktuální stav
 }
 
 // Spuštění načítání dat
 loadGifts();
 
-// Globální dostupnost funkce
+// Udělejte funkci `reserveGift` globálně dostupnou
 window.reserveGift = reserveGift;
